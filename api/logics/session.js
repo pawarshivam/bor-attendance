@@ -123,7 +123,11 @@ module.exports.attendance = async (request, response) => {
 
             request.flash('success', `Attendance for ${volunteer.email} added successfully`);
           } catch (error) {
-            request.flash('error', error.message);
+            if (error.code === 11000 || error.code === 11001) {
+              request.flash('info', 'Your attendance has already been marked');
+            } else {
+              request.flash('error', error.message);
+            }
           }
         }
       }

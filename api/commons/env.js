@@ -54,23 +54,6 @@ libs.joi.assert(
     .required(),
 );
 
-// JWT_SECRET
-libs.joi.assert(
-  process.env.APP_SECRET,
-  libs.joi
-    .string()
-    .required(),
-);
-
-// JWT_ALGORITHM
-libs.joi.assert(
-  process.env.JWT_ALGORITHM,
-  libs.joi
-    .string()
-    .valid('HS256')
-    .required(),
-);
-
 // GMAIL_USER
 libs.joi.assert(
   process.env.GMAIL_USER,

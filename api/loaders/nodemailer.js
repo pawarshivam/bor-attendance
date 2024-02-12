@@ -26,4 +26,4 @@ module.exports.send = (to, subject, body) => {
       html: body,
     });
   }
-}
+};
