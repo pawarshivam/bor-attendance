@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+
+<%- include("../partials/head", { title: "Camera" , }); -%>
+
+    <body class="bg-light">
+        <%- include("../partials/flash-alert"); -%>
+
+            <nav class="navbar bg-light fixed-top">
+                <div class="container">
+                    <a class="navbar-brand">
+                        <%= xsession.name %>
+                    </a>
+                    <form class="d-flex" id="form" method="POST">
+                        <input type="text" class="form-control me-2" id="payload" name="payload"
+                            placeholder="Volunteer Email" required>
+                        <button class="btn btn-outline-secondary" type="submit">Submit</button>
+                    </form>
+                </div>
+            </nav>
+
+            <div class="container d-flex justify-content-center">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div style="width: 300px" id="reader"></div>
+                    </div>
+                </div>
+            </div>
+
+            <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+            <script>
+                const onScanSuccess = (decodedText, decodedResult) => {
+                    alert(decodedText);
+                }
+
+                const html5QrcodeScanner = new Html5QrcodeScanner(
+                    "reader", { 
+                        fps: 10, 
+                        qrbox: 250, 
+                    });
+                
+                html5QrcodeScanner.render(onScanSuccess);
+            </script>
+        
+            <%- include("../partials/scripts"); -%>
+    </body>
+
+</html>

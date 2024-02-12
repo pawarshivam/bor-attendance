@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to <%= org %></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7f7f7;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo {
+            width: 100px;
+            height: auto;
+        }
+        .content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .qr {
+            width: 200px;
+            height: auto;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://img1.wsimg.com/isteam/ip/c01682bb-8bb5-45bd-b1eb-3cb2483fae49/blob-a5edcdc.png/:/rs=w:104,h:104,cg:true,m/cr=w:104,h:104/qt=q:95" alt="<%= org %> Logo" class="logo">
+            <h1>Welcome to <%= org %>!</h1>
+        </div>
+        <div class="content">
+            <p>Dear <%= email %>,</p>
+            <p>Welcome to <%= org %>! We're excited to have you onboard.</p>
+            <p>You have been successfully registered in our attendance app. From now on, we'll be able to track your attendance.</p>
+            <p>
+                <img src="<%= qr %>" alt="QR Code" class="qr">
+            </p>
+            <p>If you have any questions or encounter any issues with the app, please feel free to contact us at beatsofredmond@gmail.com.</p>
+            <p>Thank you for joining us on this journey!</p>
+            <p>Best regards,<br><%= org %></p>
+        </div>
+        <div class="footer">
+            <p>This email was sent to <%= email %></p>
+            <p>&copy; 2024 <%= org %>. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

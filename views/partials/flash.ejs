@@ -1,0 +1,39 @@
+<% const error      = flash('error'); %>
+<% const success    = flash('success'); %>
+<% const info       = flash('info'); %>
+
+<% if (error.length > 0) { %>
+    <div class="alert alert-danger" role="alert">
+        <ul class="mb-0">
+            <% error.forEach(message=> { %>
+                <li>
+                    <%= message %>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+<% } %>
+
+<% if (success.length > 0) { %>
+    <div class="alert alert-success" role="alert">
+        <ul class="mb-0">
+            <% success.forEach(message=> { %>
+                <li>
+                    <%= message %>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+<% } %>
+
+<% if (info.length > 0) { %>
+    <div class="alert alert-info" role="alert">
+        <ul class="mb-0">
+            <% info.forEach(message=> { %>
+                <li>
+                    <%= message %>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+<% } %>

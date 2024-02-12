@@ -1,0 +1,10 @@
+<% const error      = flash('error'); %>
+<% const success    = flash('success'); %>
+<% const info       = flash('info'); %>
+<% const message    = [].concat(error, success, info).join(" ") %>
+
+<% if (message.length > 0) { %>
+    <script>
+        alert(`<%- message %>`);
+    </script>
+<% } %>

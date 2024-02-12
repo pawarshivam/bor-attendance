@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+
+<%- include("partials/head", { title: "Dashboard" , }); -%>
+
+    <body class="bg-light">
+        <%- include("partials/nav", { title: "Dashboard" , }); -%>
+
+        <div class="container border-start border-end">
+            <div class="row">
+                <div class="col-12 col-md-8">
+                    <div class="list-group shadow-sm my-3">
+                        <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">Links</a>
+                        <a href="/session/all" class="list-group-item list-group-item-action">Sessions</a>
+                        <a href="#" class="list-group-item list-group-item-action">Report</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 border-start">
+                    <div class="card shadow-sm my-3">
+                        <div class="card-body">
+                            <h5 class="card-title">New Volunteer</h5>
+                            <div class="card-text">
+                                <%- include("partials/flash"); -%>
+
+                                <form action="/volunteer/new" method="POST">
+                                    <div class="form-group mb-3">
+                                        <label for="email" class="form-label">Volunteer Email</label>
+                                        <input type="email" class="form-control" id="email" name="email" required>
+                                        <div id="help-email" class="form-text">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group mb-3">
+                                        <label for="name" class="form-label">Volunteer Name</label>
+                                        <input type="name" class="form-control" id="name" name="name"
+                                            aria-describedby="help-name" required>
+                                        <div id="help-name" class="form-text">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                            tempor incididunt ut labore et dolore magna aliqua
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary btn-block w-100">Create</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include("partials/footer"); -%>
+        <%- include("partials/scripts"); -%>
+    </body>
+
+</html>

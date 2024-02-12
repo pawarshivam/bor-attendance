@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+
+<%- include("../partials/head", {
+    title: "Sessions",
+}); -%>
+
+<body class="bg-light">
+    <%- include("../partials/nav", {
+        title: "Sessions",
+    }); -%>
+
+    <div class="container border-start border-end py-3 p-md-5">
+        <a class="btn btn-primary btn-sm mb-3" href="/session/new" role="button">New Session</a>
+
+        <%- include("../partials/flash"); -%>
+        
+        <% const map = {}; %>
+        <% config.session.skills.forEach(skill => { %>
+            <% map[skill.id] = skill.name; %>
+        <% }); %>
+
+        <% sessions.forEach(session => { %>
+            <%- include("../partials/session", {
+                session,
+                map,
+            }) %>
+        <% }); %>
+    </div>
+
+    <%- include("../partials/footer"); -%>
+    <%- include("../partials/scripts"); -%>
+</body>
+
+</html>

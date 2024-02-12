@@ -1,0 +1,53 @@
+<div class="card shadow-sm mb-2">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12 col-md-9">
+                <h5 class="card-title">
+                    <%= session.name %>
+                </h5>
+
+                <h6 class="card-subtitle text-muted fw-normal mb-2">
+                    <%= session.date.toDateString() %>
+                </h6>
+
+                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+                
+                <section class="mb-3">
+                    <% session.skills.forEach(skill=> { %>
+                        <span class="badge text-bg-secondary">
+                            <%= map[skill] %>
+                        </span>
+                    <% }) %>
+                </section>
+                
+                <section>
+                    <a class="btn btn-primary" href="/session/<%= session._id %>/attendance" role="button">Take Attendance</a>
+                </section>
+            </div>
+            
+            <div class="col-12 col-md-3">
+                <style>
+                    .attendees-count {
+                        text-align: center;
+                        font-size: 144px;
+                    }
+                </style>
+                <h1 class="attendees-count">
+                    <%= session.attendees %>
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="d-flex justify-content-between">
+            <code>
+                <%= session.updatedAt.toLocaleString() %>
+            </code>
+            
+            <div>
+                <a class="btn btn-danger btn-sm" href="/session/<%= session._id %>/delete" role="button">Delete</a>
+                <button type="button" class="btn btn-secondary btn-sm">Edit</button>
+            </div>
+        </div>
+    </div>
+</div>

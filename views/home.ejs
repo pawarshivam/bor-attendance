@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+
+<%- include("partials/head", {
+    title: "Home",
+}); -%>
+
+<body class="bg-light">
+    <%- include("partials/nav", {
+        title: "Home",
+    }); -%>
+
+    <div class="container border-start border-end p-5">
+        <%- include("partials/flash"); -%>
+
+        <% if (session.auth) { %>
+            <a class="btn btn-primary" href="/dashboard" role="button">Dashboard</a>
+        <% } %>
+    </div>
+
+    <%- include("partials/footer"); -%>
+    <%- include("partials/scripts"); -%>
+</body>
+
+</html>
