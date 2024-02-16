@@ -5,7 +5,7 @@ const nodemailer  = global.abs('api/loaders/nodemailer');
 
 /* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
 module.exports.all = async (request, response) => {
-  let sessions = await models.Session.find().sort({ createdAt: -1 }).limit(10);
+  let sessions = await models.Session.find().sort({ date: -1 }).limit(10);
 
   if (sessions.length === 0) {
     request.flash('info', 'You have not created any sessions yet');
